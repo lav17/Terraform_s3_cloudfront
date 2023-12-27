@@ -7,4 +7,6 @@ Create a terraform.tfvar file and include the followinf -
 * ec2_ami_id = ""
 * cloudfront_ips = ""
 * key_name = ""
+
+  
 ->Fill in the required details
