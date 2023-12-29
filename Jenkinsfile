@@ -8,12 +8,6 @@ pipeline {
     }
 
     stages {
-        stage('Build project') {
-            steps {
-                git branch: 'master', url: 'https://github.com/lav17/Terraform_nodejs_app.git'
-            }
-        }
-
         stage('Terraform Init') {
             steps {
                 withCredentials([[
