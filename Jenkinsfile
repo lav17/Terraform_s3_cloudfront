@@ -26,7 +26,9 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
+        
+
+        stage('Terraform Destroy') {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
@@ -36,7 +38,7 @@ pipeline {
                 ]]) {
                     script {
                         bat """
-                            terraform apply \
+                            terraform destroy \
                                 -var AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID} \
                                 -var AWS_SECRET_ACCESS_KEY=${env.AWS_SECRET_ACCESS_KEY} \
                                 -auto-approve
